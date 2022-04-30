@@ -8,3 +8,5 @@ createInertiaApp({
     render(<App {...props} />, el);
   },
 });
+
+import "stylesheets/application"

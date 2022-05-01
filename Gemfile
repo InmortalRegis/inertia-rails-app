@@ -82,5 +82,4 @@ gem "devise", "~> 4.8"
 
 gem "js-routes", "~> 2.2", :group => :development
 
-
 gem 'cancancan'

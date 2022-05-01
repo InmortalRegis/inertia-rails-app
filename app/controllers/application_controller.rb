@@ -1,7 +1,18 @@
 class ApplicationController < ActionController::Base
-    include InertiaCsrf
+  
     include Auth
-    # before_action :authenticate_user!
-    # inertia_share user: -> {current_user}
+
+    include InertiaCsrf
+    include InertiaFlash
+    include InertiaJson
+    
+
+    inertia_share auth: -> {
+        {
+          user: current_user.as_json(
+            only: [ :id, :first_name, :last_name ],
+          )
+        }
+      }
 
 end

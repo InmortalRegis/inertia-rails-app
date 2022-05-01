@@ -77,3 +77,10 @@ end
 gem "webpacker", "~> 5.4"
 
 gem "tailwindcss-rails-webpacker", "~> 0.2.1"
+
+gem "devise", "~> 4.8"
+
+gem "js-routes", "~> 2.2", :group => :development
+
+
+gem 'cancancan'

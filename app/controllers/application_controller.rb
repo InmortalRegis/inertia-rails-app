@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-    def index
-        render inertia: 'Index', props: {}
-    end
+    include InertiaCsrf
+    include Auth
+    # before_action :authenticate_user!
+    # inertia_share user: -> {current_user}
+
 end

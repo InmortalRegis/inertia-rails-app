@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import LoginForm from "../components/LoginForm/LoginForm";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import { Inertia } from "@inertiajs/inertia";
 import "./Login.css";
 const Login = () => {
   const [loginState, setLoginState] = useState({
@@ -20,11 +21,15 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submit");
+    console.log(window.$routes.user_session());
+    Inertia.post(window.$routes.user_session(), {
+      user: loginState,
+    });
   };
   return (
     <div className="login-page">
       <LoginForm
-        className="w-8/12"
+        className="w-6/12"
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       ></LoginForm>

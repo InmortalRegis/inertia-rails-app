@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', defer: true %>
     <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto px-5">
       <%= yield %>
     </main>
   </body>

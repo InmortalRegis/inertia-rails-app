@@ -9,4 +9,4 @@ createInertiaApp({
   },
 });
 
-import "stylesheets/application"
+import "stylesheets/application";

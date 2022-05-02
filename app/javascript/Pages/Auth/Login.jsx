@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import { Inertia } from "@inertiajs/inertia";
-import { usePage } from "@inertiajs/inertia-react";
-
+import FlashMessages from "../../components/FlashMessages/FlashMessages";
 import "./Login.css";
-const Login = (props) => {
-  const { flash } = usePage().props;
+const Login = () => {
   const [loginState, setLoginState] = useState({
     email: "",
     password: "",
@@ -31,7 +29,7 @@ const Login = (props) => {
   };
   return (
     <div className="login-page">
-      {flash.alert && <div class="alert">{flash.alert}</div>}
+      <FlashMessages />
       <LoginForm
         className="w-6/12"
         handleChange={handleChange}

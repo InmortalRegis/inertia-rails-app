@@ -6,7 +6,7 @@ import AInput from "../AInput/AInput";
 const LoginForm = (props) => {
   return (
     <div className={props.className + " " + "login-form"}>
-      <h1 className="mb-3 text-center text-2xl font-bold">Iniciar sesion!</h1>
+      <h1 className="mb-3 text-center text-2xl font-bold">Iniciar sesion !</h1>
       <form onSubmit={props.handleSubmit} className="flex flex-col">
         <AInput
           type="text"

@@ -495,19 +495,19 @@ export const serialize = __jsr.serialize;
 
 /**
  * Generates rails route to
+ * /dashboard(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const dashboard_home = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"dashboard"],[1,[2,[8,"."],[3,"format"]]]]]);
+
+/**
+ * Generates rails route to
  * /logout(.:format)
  * @param {object | undefined} options
  * @returns {string} route path
  */
 export const destroy_user_session = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"logout"],[1,[2,[8,"."],[3,"format"]]]]]);
-
-/**
- * Generates rails route to
- * /dashboard(.:format)
- * @param {object | undefined} options
- * @returns {string} route path
- */
-export const home = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"dashboard"],[1,[2,[8,"."],[3,"format"]]]]]);
 
 /**
  * Generates rails route to

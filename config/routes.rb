@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   #   root to: "home#index", as: :home
   # end
   scope :dashboard do
-    root to: "home#index", as: :dashboard_home
+    root to: "dashboard#index", as: :dashboard_home
   end
 end

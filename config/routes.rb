@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: [ :sessions, :passwords, :registrations ]
+  devise_for :users, skip: %i[sessions passwords registrations]
   as :user do
     get 'login', to: 'users/sessions#new', as: :new_user_session
     post 'login', to: 'users/sessions#create', as: :user_session
@@ -10,6 +10,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "home#index"
-  
+  root 'home#index'
+  # get '/dashboard' => 'home#index', as: :dashboard
+  # namespace "dashboard" do
+  #   root to: "home#index", as: :home
+  # end
+  scope :dashboard do
+    root to: "home#index", as: :dashboard_home
+  end
 end

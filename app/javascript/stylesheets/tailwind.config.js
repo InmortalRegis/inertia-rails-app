@@ -3,17 +3,21 @@ module.exports = {
   purge: {
     enabled: ["production"].includes(process.env.NODE_ENV),
     content: [
-      './**/*.html.erb',
-      './app/helpers/**/*.rb',
-      './app/javascript/**/*.js',
+      "./**/*.html.erb",
+      "./app/helpers/**/*.rb",
+      "./app/javascript/**/*.js",
     ],
   },
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "pickled-bluewood": "#2e4557",
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};

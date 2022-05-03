@@ -10,7 +10,7 @@ const LogOut = () => {
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
-      className="h-6 w-6"
+      className="h-5 w-5"
       strokeLinejoin="round"
     >
       <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>

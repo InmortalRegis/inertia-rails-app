@@ -1,5 +1,6 @@
 import React from "react";
 import ProfileIcon from "../components/Icons/ProfileIcon";
+import ATable from "../components/ATable/ATable";
 import MainLayout from "../layouts/Main";
 
 const StatisticCard = ({ icon, statTitle, statValue }) => {
@@ -36,6 +37,9 @@ const Dashboard = () => {
           statValue="124"
           statTitle="Lecciones"
         />
+      </div>
+      <div className="pt-3">
+        <ATable />
       </div>
     </MainLayout>
   );

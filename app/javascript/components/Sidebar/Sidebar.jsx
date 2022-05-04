@@ -11,11 +11,6 @@ import TaskIcon from "../Icons/TaskIcon";
 import { Link, usePage } from "@inertiajs/inertia-react";
 
 const SidebarItem = ({ badge, icon, name, badgeStyle, to }) => {
-  const splited = window.location.pathname.split("/");
-  console.log(
-    "🚀 ~ file: Sidebar.jsx ~ line 15 ~ SidebarItem ~ splited",
-    splited
-  );
   const getClasses = (style) => {
     switch (style) {
       case "success":

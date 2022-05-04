@@ -8,8 +8,14 @@ import NotificationIcon from "../Icons/NotificationIcon";
 import ProfileIcon from "../Icons/ProfileIcon";
 import SettingsIcon from "../Icons/SettingsIcon";
 import TaskIcon from "../Icons/TaskIcon";
+import { Link, usePage } from "@inertiajs/inertia-react";
 
-const SidebarItem = ({ badge, icon, name, badgeStyle }) => {
+const SidebarItem = ({ badge, icon, name, badgeStyle, to }) => {
+  const splited = window.location.pathname.split("/");
+  console.log(
+    "🚀 ~ file: Sidebar.jsx ~ line 15 ~ SidebarItem ~ splited",
+    splited
+  );
   const getClasses = (style) => {
     switch (style) {
       case "success":
@@ -23,9 +29,13 @@ const SidebarItem = ({ badge, icon, name, badgeStyle }) => {
     }
   };
   return (
-    <a
-      href="#"
-      className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+    <Link
+      href={to}
+      className={`relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6 ${
+        window.location.pathname.startsWith(to)
+          ? "text-gray-800 border-indigo-500 bg-gray-50"
+          : ""
+      }`}
     >
       <span className="inline-flex justify-center items-center ml-4">
         {icon}
@@ -41,14 +51,18 @@ const SidebarItem = ({ badge, icon, name, badgeStyle }) => {
           {badge}
         </span>
       )}
-    </a>
+    </Link>
   );
 };
 
 const Sidebar = () => {
   const items = [
     { header: "Menu" },
-    { name: "Dashboard", icon: <HomeIcon /> },
+    {
+      name: "Dashboard",
+      icon: <HomeIcon />,
+      to: window.$routes.admin_dashboard(),
+    },
     { name: "Cursos", icon: <TaskIcon />, badge: "10", badgeStyle: "success" },
     {
       name: "Grupos de cursos",
@@ -85,6 +99,7 @@ const Sidebar = () => {
     {
       name: "Facultades",
       icon: <TaskIcon />,
+      to: window.$routes.admin_faculties(),
     },
     {
       name: "Escuelas",
@@ -117,6 +132,7 @@ const Sidebar = () => {
                     badge={item.badge}
                     icon={item.icon}
                     name={item.name}
+                    to={item.to}
                     badgeStyle={item.badgeStyle}
                   />
                 </li>

@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
     def index
-        render inertia: 'Dashboard', props: {}
+        render inertia: 'Admin/Dashboard', props: {}
     end
-    
+
 end

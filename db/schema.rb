@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_01_184745) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_03_230227) do
+  create_table "faculties", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.integer "updated_by"
+    t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["created_by"], name: "index_faculties_on_created_by"
+    t.index ["updated_by"], name: "index_faculties_on_updated_by"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

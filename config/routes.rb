@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   # namespace "dashboard" do
   #   root to: "home#index", as: :home
   # end
-  scope :dashboard do
-    root to: "dashboard#index", as: :dashboard_home
+  scope :admin do
+    get '/', to: redirect('/dashboard')
+    get '/dashboard' => "dashboard#index", as: :admin_dashboard
+    get '/faculties' => 'faculties#index', as: :admin_faculties
+    get '/faculties/new' => 'faculties#new', as: :admin_new_faculty
+    post  '/faculties/create' => 'faculties#create', as: :admin_create_faculty
   end
 end

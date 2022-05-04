@@ -1,7 +1,7 @@
 import React from "react";
-import ProfileIcon from "../components/Icons/ProfileIcon";
-import ATable from "../components/ATable/ATable";
-import MainLayout from "../layouts/Main";
+import ProfileIcon from "../../components/Icons/ProfileIcon";
+import ATable from "../../components/ATable/ATable";
+import MainLayout from "../../layouts/Main";
 
 const StatisticCard = ({ icon, statTitle, statValue }) => {
   return (
@@ -17,6 +17,38 @@ const StatisticCard = ({ icon, statTitle, statValue }) => {
   );
 };
 const Dashboard = () => {
+  const headers = [
+    {
+      name: "#",
+      value: "id",
+    },
+    {
+      name: "Nombre",
+      value: "name",
+    },
+    {
+      name: "Vistas",
+      value: "views",
+    },
+  ];
+
+  const items = [
+    {
+      id: 1,
+      name: "Adam",
+      views: 858,
+    },
+    {
+      id: 2,
+      name: "Adam",
+      views: 112,
+    },
+    {
+      id: 3,
+      name: "Chris",
+      views: 1280,
+    },
+  ];
   return (
     <MainLayout>
       <div className="grid grid-cols-3 gap-4">
@@ -39,7 +71,7 @@ const Dashboard = () => {
         />
       </div>
       <div className="pt-3">
-        <ATable />
+        <ATable headers={headers} items={items} title="Cursos más vistos" />
       </div>
     </MainLayout>
   );

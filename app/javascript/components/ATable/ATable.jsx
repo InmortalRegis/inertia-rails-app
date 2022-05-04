@@ -1,10 +1,10 @@
 import React from "react";
 import "./ATable.css";
-const ATable = () => {
+const ATable = ({ headers, items, title }) => {
   return (
     <div className="a-table bg-white pb-4 px-4 rounded-md w-full">
       <div className="flex justify-between w-full pt-6 ">
-        <p className="ml-3"> Cursos más vistos</p>
+        <p className="ml-3">{title}</p>
         <svg
           width="14"
           height="4"
@@ -25,7 +25,7 @@ const ATable = () => {
             type=""
             name=""
             className="leading-snug border border-gray-300 block w-full appearance-none bg-gray-100 text-sm text-gray-600 py-1 px-4 pl-8 rounded-lg"
-            placeholder="Search"
+            placeholder="Buscar..."
           />
 
           <div className="pointer-events-none absolute pl-3 inset-y-0 left-0 flex items-center px-2 text-gray-300">
@@ -42,46 +42,27 @@ const ATable = () => {
       <div className="overflow-x-auto mt-6">
         <table className="table-auto border-collapse w-full">
           <thead>
-            <tr
-              className="rounded-lg text-sm font-medium text-gray-700 text-left"
-              // style="font-size: 0.9674rem"
-            >
-              <th
-                className="px-4 py-2 bg-gray-200 "
-                // style="background-color:#f8f8f8"
-              >
-                #
-              </th>
-              <th
-                className="px-4 py-2 bg-gray-200"
-                // style="background-color:#f8f8f8"
-              >
-                Nombre
-              </th>
-              <th
-                className="px-4 py-2 bg-gray-200"
-                // style="background-color:#f8f8f8"
-              >
-                Vistas
-              </th>
+            <tr className="rounded-lg text-sm font-medium text-gray-700 text-left">
+              {headers.map((header, index) => (
+                <th key={index} className="px-4 py-2 bg-gray-200">
+                  {header.name}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody className="text-sm font-normal text-gray-700">
-            <tr className="hover:bg-gray-100 border-b border-gray-200 py-10">
-              <td className="px-4 py-4">1</td>
-              <td className="px-4 py-4">Adam</td>
-              <td className="px-4 py-4">858</td>
-            </tr>
-            <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
-              <td className="px-4 py-4 flex items-center">2</td>
-              <td className="px-4 py-4">Adam</td>
-              <td className="px-4 py-4">112</td>
-            </tr>
-            <tr className="hover:bg-gray-100  border-gray-200">
-              <td className="px-4 py-4">3</td>
-              <td className="px-4 py-4">Chris</td>
-              <td className="px-4 py-4">1,280</td>
-            </tr>
+            {items.map((item, index) => (
+              <tr
+                className="hover:bg-gray-100 border-b border-gray-200 py-10"
+                key={index}
+              >
+                {headers.map((header, index) => (
+                  <td className="px-4 py-2" key={index}>
+                    {item[header.value]}
+                  </td>
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

@@ -495,11 +495,35 @@ export const serialize = __jsr.serialize;
 
 /**
  * Generates rails route to
- * /dashboard(.:format)
+ * /admin/faculties/create(.:format)
  * @param {object | undefined} options
  * @returns {string} route path
  */
-export const dashboard_home = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"dashboard"],[1,[2,[8,"."],[3,"format"]]]]]);
+export const admin_create_faculty = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"admin"],[2,[7,"/"],[2,[6,"faculties"],[2,[7,"/"],[2,[6,"create"],[1,[2,[8,"."],[3,"format"]]]]]]]]]);
+
+/**
+ * Generates rails route to
+ * /admin/dashboard(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const admin_dashboard = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"admin"],[2,[7,"/"],[2,[6,"dashboard"],[1,[2,[8,"."],[3,"format"]]]]]]]);
+
+/**
+ * Generates rails route to
+ * /admin/faculties(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const admin_faculties = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"admin"],[2,[7,"/"],[2,[6,"faculties"],[1,[2,[8,"."],[3,"format"]]]]]]]);
+
+/**
+ * Generates rails route to
+ * /admin/faculties/new(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const admin_new_faculty = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"admin"],[2,[7,"/"],[2,[6,"faculties"],[2,[7,"/"],[2,[6,"new"],[1,[2,[8,"."],[3,"format"]]]]]]]]]);
 
 /**
  * Generates rails route to

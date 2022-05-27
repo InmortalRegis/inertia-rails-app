@@ -535,6 +535,14 @@ export const destroy_user_session = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"log
 
 /**
  * Generates rails route to
+ * /register(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const new_user_registration = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"register"],[1,[2,[8,"."],[3,"format"]]]]]);
+
+/**
+ * Generates rails route to
  * /login(.:format)
  * @param {object | undefined} options
  * @returns {string} route path
@@ -572,6 +580,14 @@ export const turbo_refresh_historical_location = __jsr.r({"format":{}}, [2,[7,"/
  * @returns {string} route path
  */
 export const turbo_resume_historical_location = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"resume_historical_location"],[1,[2,[8,"."],[3,"format"]]]]]);
+
+/**
+ * Generates rails route to
+ * /register(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const user_registration = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"register"],[1,[2,[8,"."],[3,"format"]]]]]);
 
 /**
  * Generates rails route to

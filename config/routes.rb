@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, skip: %i[sessions passwords registrations]
   as :user do
     get 'login', to: 'users/sessions#new', as: :new_user_session
+    get 'register', to: 'users/registrations#new', as: :new_user_registration
+    post 'register', to: 'users/registrations#create', as: :user_registration
     post 'login', to: 'users/sessions#create', as: :user_session
     match 'logout', to: 'users/sessions#destroy', as: :destroy_user_session, via: Devise.mappings[:user].sign_out_via
   end
@@ -10,11 +12,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'home#index'
+  # root 'home#index'
   # get '/dashboard' => 'home#index', as: :dashboard
   # namespace "dashboard" do
   #   root to: "home#index", as: :home
   # end
+  get '/', to: redirect('/admin/dashboard'), as: :root
   scope :admin do
     get '/', to: redirect('/dashboard')
     get '/dashboard' => "dashboard#index", as: :admin_dashboard

@@ -23,7 +23,6 @@ const Faculties = () => {
         <ABtn href={window.$routes.admin_new_faculty()}>Crear facultad</ABtn>
       </div>
       <ATable items={faculties} headers={headers} title="Facultades" />
-      <CTable />
     </MainLayout>
   );
 };
